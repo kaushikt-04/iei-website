@@ -1,0 +1,224 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html,
+body {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    background: url(bgimg.jpg);
+}
+::selection {
+    background: #1a75ff;
+    color: #fff;
+}
+.wrapper{
+    height: 100%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.wrapper-1{
+    width: 60vw;
+    height: 90%;
+    position: relative;
+    padding: 5vh 1vw;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    background-image: linear-gradient(to bottom, rgb(114, 182, 255), white);
+    border-radius: 15px;
+
+}
+.wrapper-1 .title-text {
+    position: relative;
+    width: 100%;
+    margin-top: 8vh;
+    margin-bottom: 3vh;
+}
+
+.wrapper-1 .title {
+    width: 100%;
+    font-size: 4rem;
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);  
+}
+.wrapper .slide-controls {
+    position: relative;
+    display: flex;
+    width: 50vw;
+    overflow: hidden;
+    margin: 1.5rem 1.2rem 1.2rem 1.2rem;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid lightgrey;
+    border-radius: 15px;
+}
+.slide-controls .slide {
+    height: 100%;
+    width: 100%;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-align: center;
+    line-height: 5.5vh;
+    cursor: pointer;
+    z-index: 1;
+    transition: all 0.6s ease;
+}
+
+.slide-controls label.signup {
+    color: #000;
+}
+
+.slide-controls .slider-tab {
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    left: 0;
+    z-index: 0;
+    border-radius: 15px;
+    background: -webkit-linear-gradient(left, #003366, #004080, #0059b3, #0073e6);
+    transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+#signup:checked~.slider-tab {
+    left: 50%;
+}
+
+#signup:checked~label.signup {
+    color: #fff;
+    cursor: default;
+    user-select: none;
+}
+
+#signup:checked~label.login {
+    color: #000;
+}
+
+#login:checked~label.signup {
+    color: #000;
+}
+
+#login:checked~label.login {
+    cursor: default;
+    user-select: none;
+}
+.wrapper-1 .form-inner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+}
+.wrapper-1 .field input{
+    width: 50vw;
+    height: 5vh;
+    margin: 2vh;
+    padding-left: 4vw;
+    border-radius: 15px;
+    border: 1px solid lightgrey;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+.wrapper-1 .form-inner form .field input:focus {
+    border-color: #1a75ff;
+}
+
+.wrapper-1 .form-inner form .field input::placeholder {
+    color: #999;
+    transition: all 0.3s ease;
+}
+.wrapper-1 form .field input:focus::placeholder {
+    color: #1a75ff;
+}
+.wrapper-1 .form-inner form .pass-link {
+    text-align: right;
+    margin-right: 2vw;
+}
+.wrapper-1 .form-inner form .signup-link {
+    text-align: center;
+    margin-top: 4vh;
+}
+.wrapper-1 .form-inner form .pass-link a,
+.form-inner form .signup-link a {
+    color: #1a75ff;
+    text-decoration: none;
+}
+.wrapper-1 form .btn {
+    height: 7vh;
+    width: 100%;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    margin-top: 3rem;
+}
+.wrapper-1 form .btn-layer{
+    height: 100%;
+    width: 100%;
+    background: -webkit-linear-gradient(right, #003366, #004080, #0059b3, #0073e6);
+    color: white;
+    transition: all 0.4s ease;
+}
+.wrapper-1 form .btn:hover .btn-layer {
+    left: 0;
+}
+.wrapper-1 .signup-top {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .3rem;
+    justify-content: center;
+}
+@media screen and (max-width:667px){
+    .wrapper-1{
+        width: 65vw;
+    }
+}
+@media screen and (max-width:624px){
+    .wrapper-1{
+        width: 70vw;
+    }
+    .wrapper .slide-controls {
+        width: 60vw;
+    }
+    .field input{
+        width: 60vw;
+    }
+}
+@media screen and (max-width:530px){
+    .wrapper-1 {
+        width: 75vw;
+    }
+}
+@media screen and (max-width:485px){
+    .wrapper-1 .title {
+        font-size: 2.5rem;
+    }
+}
+@media screen and (max-width:405px){
+    .wrapper-1 .title {
+        font-size: 2rem;
+    }
+}
+.hide{
+    display: none;
+}

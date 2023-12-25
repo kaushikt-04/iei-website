@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login-SignUp</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="wrapper-2.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+        <div class="container">
+            <div class="wrapper">
+                <div class="form-container">
+                    <div class="slide-controls">
+                        <input type="radio" name="slide" id="login" checked>
+                        <input type="radio" name="slide" id="signup">
+                        <label for="login" class="slide login" >Login</label>
+                        <label for="signup" class="slide signup" >Signup</label>
+                        <div class="slider-tab"></div>
+                    </div>
+            <div class="wrapper-1">
+                <div class="title-text">
+                    <div class="title login-sec">Welcome Back!</div>
+                </div>
+
+                        <div class="form-inner">
+                            <form action="#" class="form">
+                                <div class="field">
+                                    <input type="text" placeholder="Email Address" required>
+                                </div>
+                                <div class="field">
+                                    <input type="password" placeholder="Password" required>
+                                </div>
+                                <div class="pass-link"><a href="#">Forgot password?</a></div>
+                                <div class="field btn">
+                                        <input type="submit" value="Login" class="btn-layer">
+                                </div>
+                                <div class="signup-link">Not a member? <a href="">Signup now</a></div>
+                            </form>   
+                        </div>
+                </div>
+            </div>
+            <div id="wrapper-2" class="wrapper-2">
+                <div class="form-container">
+                <div class="title-text">
+                    <div class="title login">Bring your jurney!</div>
+                    
+                </div>
+                <form action="#" class="signup">
+                    <div class="signup-top">
+                        <div class="field field-top">
+                            <input type="text" placeholder="Name" required>
+                        </div>
+                        <div class="field field-top">
+                            <input type="text" placeholder="Email Address" required class="">
+                        </div>
+                        <div class="field field-top">
+                            <input type="tel" placeholder="Phone" required>
+                        </div>
+                        <div class="field field-top">
+                            <input type="text" placeholder="Scholar ID" required>
+                        </div>
+
+                    </div>
+
+                    <div class="field password">
+                        <input type="password" placeholder="Password" required>
+                    </div>
+                    <div class="field password">
+                        <input type="password" placeholder="Confirm password" required>
+                    </div>
+
+                    <div class="field profile">
+                        <input type="file" accept="image/jpeg, image/png, image/jpg" id="profile-pic">
+                        <label id="profile-input-label" for="profile-pic">
+                            Select Profile Pic
+                            <img src="icons8-life-cycle-40.png" alt="" width="40">
+                        </label>
+                    </div>
+                    <div class="field btn">
+                        <div class="btn-layer"></div>
+                        <input type="submit" value="Signup" class="signupbtn">
+                    </div>
+                </form>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const loginRadio = document.getElementById('login');
+            const signupRadio = document.getElementById('signup');
+            const wrapper1 = document.querySelector('.wrapper-1');
+            const wrapper2 = document.querySelector('.wrapper-2');
+            const slideControls = document.querySelector('.slide-controls');
+            const signupBtn = document.querySelector("label.signup");
+            const signupLink = document.querySelector("form .signup-link a");
+
+            slideControls.addEventListener('click', function () {
+                if (loginRadio.checked) {
+                    wrapper1.style.display = 'flex';
+                    wrapper2.style.display = 'none';
+                } else if (signupRadio.checked) {
+                    wrapper1.style.display = 'none';
+                    wrapper2.style.display = 'flex';
+                }
+            });
+            signupLink.onclick = () => {
+            signupBtn.click();
+            return false;
+        };
+        });
+        </script>
+</body>
+</html>
